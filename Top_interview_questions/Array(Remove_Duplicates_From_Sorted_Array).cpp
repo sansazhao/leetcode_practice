@@ -1,7 +1,7 @@
 /*
 * Given a sorted array nums, remove the duplicates in-place such that
 * each element appear only once and return the new length.
-* Do not allocate extra space for another array, you must do this by 
+* Do not allocate extra space for another array, you must do this by
 * modifying the input array in-place with O(1) extra memory.
 
 Clarification:
@@ -19,7 +19,10 @@ for (int i = 0; i < len; i++) {
 }
 
 */
-
+#include<stdio.h>
+#include<iostream>
+#include<vector>
+using namespace std;
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
@@ -36,3 +39,14 @@ public:
         return j;
     }
 };
+
+int main(){
+    Solution s1;
+    vector<int> vec = {0,1,1,1,1,2,2,2,2,3,4,5,6};
+    int ans = s1.removeDuplicates(vec);
+    // for(auto i : vec){
+        // cout<< i<<" ";
+    // }
+    cout << ans;
+    return 0;
+}

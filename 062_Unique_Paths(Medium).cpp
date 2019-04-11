@@ -1,3 +1,8 @@
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
 class Solution {
 public:
     int uniquePaths(int m, int n) {
@@ -10,3 +15,14 @@ public:
         return (int) ret;
     }
 };
+int f(int num){
+    int ans = 1;
+    for(int i = 1; i <= num; ++i)
+        ans += i;
+    return ans;
+}
+int main(){
+    Solution S1;
+    cout << S1.uniquePaths(3,2);
+    return 0;
+}
