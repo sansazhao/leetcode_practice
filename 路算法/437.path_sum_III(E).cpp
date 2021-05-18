@@ -8,21 +8,25 @@
  * };
  */
 
-// 二叉树 递归
+// 二叉树 递归算法
 class Solution {
 public:
     int pathSum(TreeNode* root, int sum) {
-        if(!root)return 0;
-        return path(root, sum)+pathSum(root->left, sum)+pathSum(root->right, sum); 
+        if(!root) return 0;
+        return path(root, sum) + pathSum(root->left, sum) + pathSum(root->right, sum); 
     }
     
     int path(TreeNode* root, int sum){
-        if(!root)return 0;
+        if (!root) return 0;
         int ret = 0;
-        if(root->val == sum){
+        if (root->val == sum) {
             ret++;
         }
         ret += path(root->left,sum-root->val) + path(root->right,sum-root->val);
         return ret;
     }
 };
+
+
+//改良：无环可使用前缀和算法
+
